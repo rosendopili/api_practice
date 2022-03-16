@@ -1,9 +1,64 @@
+body {
+    margin: 0 auto; 
+    text-align: center; 
+    font-family: arial, sans-serif; 
+}
+
 .display_none {
     display: none; 
 }
 
-.weather_container{
+.content_container{
+    height: 100%; 
 }
+
+.weather_container{
+    margin: 10px auto; 
+    width: 50%; 
+    height: auto; 
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.weather_text {
+    margin: auto; 
+    height: 20px; 
+    font-size: 20px; 
+    align-self: center; 
+
+}
+.weather_image {
+    margin: 0 auto; 
+    width: 50px; 
+    height: auto; 
+}
+
+.temp_description_container, .low_high_container {
+    width: 50%; 
+    margin: 0 auto; 
+    display: flex; 
+}
+
+
+
+.temp_description_container {
+    width: 30%; 
+}
+
+.low, .high{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin: 0 auto; 
+    height: auto; 
+}
+
+.label {
+    margin: 0; 
+}
+
 
 .cityname {
 }
@@ -18,4 +73,21 @@
 }
 
 .high {
+}
+
+.suggestion_container{
+    background-color: lightgray;
+    margin: auto;
+    padding: 25px 0;  
+    width: 50%;
+    height: auto; 
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.clothing_image{
+    padding: 5px;
+    width: 40%; 
+    height: auto; 
 }

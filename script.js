@@ -13,6 +13,7 @@ const shirt = document.querySelector('.shirt');
 const pants= document.querySelector('.pants');
 const shoes = document.querySelector('.shoes'); 
 const suggestionContainer = document.querySelector('.suggestion_container'); 
+const contentContainer = document.querySelector('.content_container'); 
 
 const submitZip = () => {
     let zip = zipcode.value
@@ -23,10 +24,9 @@ const submitZip = () => {
         })
         .then((response) => {
             console.log(response)
-            weatherContainer.classList.remove('display_none'); 
+            contentContainer.classList.remove('display_none'); 
             getWeather(response); 
             zipcode.value = ""; 
-            suggestionContainer.classList.remove('display_none'); 
             getSuggestions(response); 
         })
         .catch((error) => {
@@ -37,23 +37,38 @@ const submitZip = () => {
 const getWeather = (response) => {
 
     cityname.textContent = response.name;
-    description.textContent = response.weather[0].description;
+if(response.weather[0].main = 'clouds'){
+    description.setAttribute('src', 'assets/day_time/scatter_broken_clouds.png');
+}
+
     temp.textContent = `${Math.floor(response.main.temp)}˚`;
-    low.textContent = `low ${Math.floor(response.main.temp_min)}˚`;
-    high.textContent = `high ${Math.floor(response.main.temp_max)}˚`;
+    low.textContent = `${Math.floor(response.main.temp_min)}˚`;
+    high.textContent = `${Math.floor(response.main.temp_max)}˚`;
+
+    let lowLabel = document.createElement('p');
+    lowLabel.textContent = 'Low'; 
+    lowLabel.classList.add('label')
+    low.appendChild(lowLabel); 
+
+    let highLabel = document.createElement('p');
+    highLabel.textContent = 'High'; 
+    highLabel.classList.add('label')
+    high.appendChild(highLabel); 
+
+
 }
 
 const getSuggestions = (response) => {
 
-    pants.setAttribute('src', 'assets/joggers.png'); 
+    pants.setAttribute('src', 'assets/clothing/joggers.png'); 
     if (response.main.temp_max > 50) {
-        hat.setAttribute('src', 'assets/fitted.png');
-        shirt.setAttribute('src', 'assets/tshirt.png');
-        shoes.setAttribute('src', 'assets/sneakers.png');
+        hat.setAttribute('src', 'assets/clothing/fitted.png');
+        shirt.setAttribute('src', 'assets/clothing/tshirt.png');
+        shoes.setAttribute('src', 'assets/clothing/sneakers.png');
     } else {
-        hat.setAttribute('src', 'assets/hardhat.png')
-        shirt.setAttribute('src', 'assets/hoodie.png');
-        shoes.setAttribute('src', 'assets/timberland.png');
+        hat.setAttribute('src', 'assets/clothing/hardhat.png')
+        shirt.setAttribute('src', 'assets/clothing/hoodie.png');
+        shoes.setAttribute('src', 'assets/clothing/timberland.png');
     }
 }
 
