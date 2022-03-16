@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' type='text/css' href='/styles.css'>
+    <title>Weather App</title>
+</head>
+<body>
+    <header>
+        <h1>Outfit Suggester</h1>
+        <p>Wonder what you should wear today? Plug in your zip code to find out.</p>
+    </header>
+       
+       <div class="form_container">
+            <form
+                class="zipcode_input">
+
+                <input
+                type="text"
+                class="zipcode" 
+                placeholder="ZIP CODE"
+                    ></input>
+
+                <button
+                type="submit"
+                class="submit"
+                    >SUBMIT
+                </button>
+            </form>
+       </div>
+       
+       <div class="content_container">
+        
+        <div class="weather_container display_none" >
+            <div class="cityname">cityname</div>
+            <div class="temp">temp</div>
+            <div class="description"></div>
+            <div class="low"></div>
+            <div class="high"></div>
+        </div>
+        
+        <div class="suggestion_container display_none">
+            <img class="hat"></img>
+            <img class="shirt"></img>
+            <img class="pants"></img>
+            <img class="shoes"></img>
+        </div>
+
+       </div>
+
+    <script type='module' src='script.js'></script>
+</body>
+</html>
