@@ -3,15 +3,12 @@ body {
     text-align: center; 
     font-family: arial, sans-serif; 
 }
-
 .display_none {
     display: none; 
 }
-
 .content_container{
     height: 100%; 
 }
-
 .weather_container{
     margin: 10px auto; 
     width: 50%; 
@@ -21,32 +18,25 @@ body {
     flex-wrap: wrap; 
     justify-content: center; 
 }
-
 .weather_text {
     margin: auto; 
-    height: 20px; 
-    font-size: 20px; 
+    height: 25px; 
+    font-size: 25px; 
     align-self: center; 
-
 }
 .weather_image {
     margin: 0 auto; 
     width: 50px; 
     height: auto; 
 }
-
 .temp_description_container, .low_high_container {
     width: 50%; 
     margin: 0 auto; 
     display: flex; 
 }
-
-
-
-.temp_description_container {
-    width: 30%; 
+.temp_description_container{
+    padding-bottom: 10px; 
 }
-
 .low, .high{
     display: flex; 
     flex-direction: column; 
@@ -54,27 +44,15 @@ body {
     margin: 0 auto; 
     height: auto; 
 }
-
+.cityname {
+    padding-bottom: 10px; 
+}
 .label {
     margin: 0; 
 }
-
-
-.cityname {
-}
-
 .temp {
+    padding-left: 3px; 
 }
-
-.description {
-}
-
-.low {
-}
-
-.high {
-}
-
 .suggestion_container{
     background-color: lightgray;
     margin: auto;
@@ -85,7 +63,6 @@ body {
     justify-content: center;
     flex-wrap: wrap; 
 }
-
 .clothing_image{
     padding: 5px;
     width: 40%; 
